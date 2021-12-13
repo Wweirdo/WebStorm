@@ -22,6 +22,45 @@
             border: 1px solid darkred
         }
     </style>
+    <script>
+        function calc(){
+            sal=$("#salary").val();
+            salnum=parseInt(sal);
+            gryl=salnum*0.08;
+            gsyl=salnum*0.2;
+            $("#gryl").html(gryl);
+            $("#gsyl").html(gsyl);
+
+            gryil=salnum*0.02;
+            gsyil=salnum*0.06;
+            $("#gryil").html(gryil);
+            $("#gsyil").html(gsyil);
+
+            grsy=salnum*0.005;
+            gssy=salnum*0.015;
+            $("#grsy").html(grsy);
+            $("#gssy").html(gssy);
+
+            gsgs=salnum*0.005;
+            $("#gsgs").html(gsgs);
+
+            gsshengy=salnum*0.008;
+            $("#gsshengy").html(gsshengy);
+
+            grgjj=salnum*0.12;
+            gsgjj=salnum*0.12;
+            $("#grgjj").html(grgjj);
+            $("#gsgjj").html(gsgjj);
+
+            grhj=gryl+gryil+grsy+grgjj;
+            gshj=gsyl+gsyil+gssy+gsgs+gsshengy+gsgjj;
+            $("#grhj").html(grhj);
+            $("#gshj").html(gshj);
+
+            ze=salnum+gshj;
+            $("#ze").html(ze);
+        }
+    </script>
 </head>
 <body>
 <div class="qaq_img">
@@ -32,10 +71,10 @@
     <tr>
         <td>工资</td>
         <td colspan="3">
-            <input type="text" class="form-control" id="sal" placeholder="请输入工资">
+            <input type="text" class="form-control" id="salary" placeholder="请输入工资">
         </td>
         <td>
-            <button type="button" class="btn btn-danger btn-block">计算</button>
+            <button onclick="calc()" type="button" class="btn btn-danger btn-block">计算</button>
         </td>
     </tr>
     <tr class="bg-primary">
@@ -96,10 +135,7 @@
     </tr>
     <tr>
         <td>总额</td>
-        <td colspan="4"></td>
-    </tr>
-    <tr>
-        <td id="ze"></td>
+        <td  id="ze" colspan="4"></td>
     </tr>
 </div>
 </body>
